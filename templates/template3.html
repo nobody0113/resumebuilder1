@@ -1,0 +1,58 @@
+<!-- templates/template3.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://localhost:5000/static/css/style.css">
+
+    <title>{{ resume[1] }}'s Resume</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .resume {
+            max-width: 700px;
+            margin: auto;
+            padding: 20px;
+            border: 2px dashed #4CAF50;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+        }
+        h2 {
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+        }
+        p {
+            margin: 5px 0;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+        <h1>{{ resume[1] }}</h1>
+        <p><strong>Email:</strong> {{ resume[2] }}</p>
+        <p><strong>Phone:</strong> {{ resume[3] }}</p>
+        <p><strong>Address:</strong> {{ resume[4] }}</p>
+
+        <h2>Education</h2>
+        <p>{{ resume[5] }}</p>
+
+        <h2>Experience</h2>
+        <p>{{ resume[6] }}</p>
+
+        <h2>Skills</h2>
+        <p>{{ resume[7] }}</p>
+    </div>
+</body>
+</html>

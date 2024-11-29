@@ -1,0 +1,61 @@
+<!-- templates/template2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://localhost:5000/static/css/style.css">
+
+    <title>{{ resume[1] }}'s Resume</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .resume {
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007BFF;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 5px;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+        <h1>{{ resume[2] }}</h1>
+        <p><strong>Email:</strong> {{ resume[2] }}</p>
+        <p><strong>Phone:</strong> {{ resume[3] }}</p>
+        <p><strong>Address:</strong> {{ resume[4] }}</p>
+
+        <h2>Education</h2>
+        <p>{{ resume[5] }}</p>
+
+        <h2>Experience</h2>
+        <p>{{ resume[6] }}</p>
+
+        <h2>Skills</h2>
+        <p>{{ resume[7] }}</p>
+
+        <h2>About</h2>
+ <p>{{ resume[9] }}</p>  <!-- Adjust index as needed based on the order of fields -->
+
+    </div>
+</body>
+</html>

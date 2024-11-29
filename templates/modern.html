@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyrie Petrakis - Digital Marketer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #2C3E85;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        .header p {
+            margin: 5px 0;
+        }
+        .content {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .content > div {
+            flex: 1 1 100%;
+            margin-bottom: 20px;
+        }
+        .content h2 {
+            color: #2C3E85;
+            font-size: 1.5em;
+            border-bottom: 2px solid #2C3E85;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        .section-title {
+            font-weight: bold;
+            color: #2C3E85;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .split-content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .split-content > div {
+            flex: 1 1 45%;
+            margin-right: 5%;
+        }
+        .split-content > div:last-child {
+            margin-right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+    <div class="container">
+        <div class="header">
+            <h1>{{resume[2]}}</h1>
+            
+            <p>📞 {{resume[4]}} | ✉️  {{resume[3]}} | 📍  {{resume[5]}}</p>
+        </div>
+        <div class="content">
+            <div class="split-content">
+                <div>
+                    <h2>EDUCATION</h2>
+                    <ul>
+                        <li><strong> {{resume[6]}}</strong><br></li>
+                       
+                    </ul>
+                    <h2>SKILLS</h2>
+                    <ul>
+                        <li>Digital Marketing Strategy Development and Execution</li>
+                        <li>Search Engine Optimization (SEO)</li>
+                        <li>Search Engine Marketing (SEM)</li>
+                        <li>Social Media Marketing (SMM)</li>
+                        <li>Email Marketing</li>
+                        <li>Copywriting and Content Creation</li>
+                        <li>Strong Communication and Interpersonal Skills</li>
+                    </ul>
+                    <h2>LANGUAGE</h2>
+                    <ul>
+                        <li>English</li>
+                        <li>Kannada</li>
+                        <li>Hindi</li>
+                        <li>Tamil</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>PROFILE SUMMARY</h2>
+                    <p>Highly motivated and results-driven digital marketer with a passion for leveraging online platforms to drive brand awareness, engage audiences, and generate leads. Seeking a challenging position where I can utilize my skills and expertise to develop and execute effective digital marketing strategies for a dynamic organization.</p>
+                    
+                    <h2>WORK EXPERIENCE</h2>
+                    <h3>Digital Marketer | Arrowai Company | 2020 – Present</h3>
+                    <ul>
+                        <li>Developed and implemented comprehensive digital marketing strategies to increase brand visibility, drive website traffic, and generate leads.</li>
+                        <li>Conducted in-depth market research and competitor analysis to identify trends and opportunities for growth.</li>
+                        <li>Stayed up-to-date with industry trends and best practices, continuously improving digital marketing strategies and techniques.</li>
+                    </ul>
+                    
+                    <h3>Digital Marketing Staff | Liceria & Co. | 2018 – 2020</h3>
+                    <ul>
+                        <li>Developed and executed social media marketing campaigns to enhance brand visibility and engage target audiences.</li>
+                        <li>Collaborated with the creative team to produce visually appealing and compelling social media content.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+</body>
+</html>

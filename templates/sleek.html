@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe - Full Stack Developer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+        .header {
+            background-color: #2C3E50;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        .header p {
+            margin: 5px 0;
+        }
+        .content {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .content > div {
+            margin-bottom: 20px;
+        }
+        .left-column, .right-column {
+            padding: 10px;
+        }
+        .left-column {
+            flex: 1 1 35%;
+        }
+        .right-column {
+            flex: 1 1 60%;
+        }
+        .section-title {
+            font-weight: bold;
+            color: #2C3E50;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+    <div class="container">
+        <div class="header">
+            <h1>{{resume[2]}}</h1>
+            <p>Full Stack Developer</p>
+        </div>
+        <div class="content">
+            <div class="left-column">
+                <div class="section-title">Contact Information</div>
+                <ul>
+                    <li>📧 {{resume[3]}}</li>
+                    <li>📞 {{resume[4]}}</li>
+                    <li>📍 {{resume[5]}}</li>
+                    
+                </ul>
+            </div>
+            <div class="right-column">
+                <div class="section-title">Professional Summary</div>
+                <p>{{resume[10]}}Experienced Full Stack Developer with a strong background in developing award-winning applications for a diverse clientele. Adept at understanding client requirements and delivering projects on time and within budget.</p>
+                
+                <div class="section-title">Work Experience</div>
+                <h3>Full Stack Developer</h3>
+                <p>{{resume[7]}}</p>
+                <ul>
+                    <li>Lead a team of developers in creating scalable web applications.</li>
+                    <li>Implemented RESTful APIs and integrated third-party services.</li>
+                    <li>Optimized application performance and improved user experience.</li>
+                </ul>
+                
+                <h3>Full Stack Developer</h3>
+                <p>Web Innovators LLC | Jun 2015 - Dec 2017</p>
+                <ul>
+                    <li>Developed and maintained web applications using React and Node.js.</li>
+                    <li>Collaborated with designers to create user-friendly interfaces.</li>
+                    <li>Conducted code reviews and provided mentorship to junior developers.</li>
+                </ul>
+                
+                <div class="section-title">Education</div>
+                <p>{{resume[6]}}</p>
+                
+                
+                <div class="section-title">Skills</div>
+                <ul>
+                    <li>{{resume[8]}}</li>
+                    <li>JavaScript</li>
+                    <li>HTML, CSS</li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

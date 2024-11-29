@@ -1,0 +1,131 @@
+@app.route('/download_resume/<int:resume_id>')
+def download_resume(resume_id):
+    # Fetch resume data from the database
+    conn = sqlite3.connect('resumes.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM resumes WHERE id = ?', (resume_id,))
+    resume = cursor.fetchone()
+    conn.close()
+
+    if resume is None:
+        flash('Resume not found!')
+        return redirect(url_for('view_resumes'))
+
+    # Get the template name from the resume data
+    template_name = resume[9]  # Assuming template field is at index 9
+
+    # Check if the template exists
+    template_path = os.path.join('templates', template_name)
+    if not os.path.isfile(template_path):
+        flash('Template not found, using default template.')
+        template_name = 'default_resume_template.html'  # Use a default template if not found
+
+    try:
+        # Render the resume as HTML for PDF conversion
+        rendered_html = render_template(template_name, resume=resume)  # Pass the resume data
+
+        # Define PDF file path
+        pdf_filename = f"resume_{resume_id}.pdf"
+        pdf_path = os.path.join('static', 'pdfs', pdf_filename)
+
+        # PDF generation options
+        options = {
+            'page-size': 'A4',
+            'margin-top': '0.75in',
+            'margin-right': '0.75in',
+            'margin-bottom': '0.75in',
+            'margin-left': '0.75in',
+            'enable-local-file-access': True,  # Allow access to local files
+            'quiet': True,  # Set to True to suppress output
+        }
+
+        # Convert HTML to PDF
+        pdfkit.from_string(rendered_html, pdf_path, configuration=PDFKIT_CONFIG, options=options)
+
+        # Send the PDF as a downloadable file
+        return send_file(pdf_path, as_attachment=True)
+
+    except Exception as e:
+        flash(f'Error generating PDF: {e}')
+        return redirect(url_for('view_resumes'))
+
+
+
+@app.route('/resume/<int:resume_id>')
+def resume(resume_id):
+    conn = sqlite3.connect('resumes.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM resumes WHERE id=?', (resume_id,))
+    resume = cursor.fetchone()
+    conn.close()
+
+    if resume is None:
+        flash('Resume not found!')
+        return redirect(url_for('view_resumes'))
+
+    return render_template('template_name.html', resume=resume)
+
+
+    # Example: Adjust path to wkhtmltopdf installation directory
+WKHTMLTOPDF_PATH = r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"
+PDFKIT_CONFIG = pdfkit.configuration(wkhtmltopdf=WKHTMLTOPDF_PATH)
+
+
+
+
+
+@app.route('/create_resume', methods=['GET', 'POST'])
+def create_resume():
+    if 'logged_in' not in session:
+        return redirect(url_for('login'))
+    
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        phone = request.form['phone']
+        address = request.form['address']
+        education = request.form['education']
+        experience = request.form['experience']
+        skills = request.form['skills']
+        template = request.form['template']
+        about = request.form['about']
+        
+        # Get user_id from session
+        username = session['username']
+        conn = sqlite3.connect('resumes.db')
+        cursor = conn.cursor()
+        cursor.execute('SELECT id FROM users WHERE username = ?', (username,))
+        user_id = cursor.fetchone()[0]
+        
+        # Insert resume linked to user_id
+        cursor.execute('''
+            INSERT INTO resumes (user_id, name, email, phone, address, education, experience, skills, template, about)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ''', (user_id, name, email, phone, address, education, experience, skills, template, about))
+        conn.commit()
+        conn.close()
+        flash('Resume created successfully!')
+        return redirect(url_for('view_resumes'))
+    
+    return render_template('create_resume.html')
+
+
+
+@app.route('/view_resumes')
+def view_resumes():
+    if 'logged_in' not in session:
+        return redirect(url_for('login'))
+    
+    username = session['username']
+    conn = sqlite3.connect('resumes.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT id FROM users WHERE username = ?', (username,))
+    user_id = cursor.fetchone()[0]
+
+    # Retrieve only resumes for the current user
+    cursor.execute('SELECT * FROM resumes WHERE user_id = ?', (user_id,))
+    resumes = cursor.fetchall()
+    conn.close()
+    return render_template('view_resumes.html', resumes=resumes)
+
+

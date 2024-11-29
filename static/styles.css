@@ -1,0 +1,21 @@
+/* Add styles for different templates */
+.template1 {
+    border: 1px solid #4CAF50;
+    padding: 15px;
+    margin: 10px;
+    background-color: #f9f9f9;
+}
+
+.template2 {
+    border: 1px solid #2196F3;
+    padding: 15px;
+    margin: 10px;
+    background-color: #e3f2fd;
+}
+
+.template3 {
+    border: 1px solid #FF9800;
+    padding: 15px;
+    margin: 10px;
+    background-color: #fff3e0;
+}

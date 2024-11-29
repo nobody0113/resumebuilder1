@@ -1,0 +1,154 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Resume Builder
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+        }
+  </style>
+ </head>
+ <body class="bg-gray-100 text-gray-900">
+  <header class="bg-blue-600 text-white py-4">
+   <div class="container mx-auto flex justify-between items-center">
+    <h1 class="text-2xl font-bold">
+     Resume Builder
+    </h1>
+    <nav>
+     <ul class="flex space-x-4">
+      <li>
+       <a class="hover:underline" href="{{ url_for('index') }}">
+        Home
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="#">
+        Templates
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="#">
+        About
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="#">
+        Contact
+       </a>
+      </li>
+      <li>
+        <a class="hover:underline" href="{{ url_for('logout') }}">
+         Logout
+        </a>
+       </li>
+       <li>
+        <a href="{{ url_for('view_resumes') }}">View_resumes</a>
+       </li>
+     </ul>
+    </nav>
+   </div>
+  </header>
+  <main class="container mx-auto py-12">
+   <section class="text-center mb-12">
+    <h2 class="text-4xl font-bold mb-4">
+     Create a Professional Resume in Minutes
+    </h2>
+    <p class="text-lg mb-8">
+     Choose from a variety of templates and customize your resume to land your dream job.
+    </p>
+    <a class="bg-blue-600 text-white py-3 px-6 rounded-full font-bold hover:bg-blue-700" href="{{ url_for('create_resume') }}">
+     Get Started
+    </a>
+   </section>
+   <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+     <img alt="Template 1: A clean and modern resume template with a professional layout" class="w-full h-48 object-cover rounded-t-lg mb-4" height="200" src="https://storage.googleapis.com/a1aa/image/xEJFFJcREe3VE6p2J9I74EQCONHYbu51H5OqdcKiCanjy12JA.jpg" width="300"/>
+     <h3 class="text-xl font-bold mb-2">
+      Modern Template
+     </h3>
+     <p class="text-gray-700 mb-4">
+      A clean and modern resume template with a professional layout.
+     </p>
+     <a class="text-blue-600 hover:underline" href="{{ url_for('view_template', template_name='modern') }}" >
+      View Template
+     </a>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+     <img alt="Template 2: A creative resume template with a unique design" class="w-full h-48 object-cover rounded-t-lg mb-4" height="200" src="https://storage.googleapis.com/a1aa/image/fu1F2R5M1BSVTicl4GqFxnyWB6n3XRfRjuWSA4D2fbMYKXbnA.jpg" width="300"/>
+     <h3 class="text-xl font-bold mb-2">
+      Creative Template
+     </h3>
+     <p class="text-gray-700 mb-4">
+      A creative resume template with a unique design.
+     </p>
+     <a class="text-blue-600 hover:underline" href="{{ url_for('view_template', template_name='creative') }}">
+      View Template
+     </a>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+     <img alt="Template 3: A simple and elegant resume template" class="w-full h-48 object-cover rounded-t-lg mb-4" height="200" src="https://storage.googleapis.com/a1aa/image/AnUPheOHvyxZCqfjtXShespLGOjq7wdtQwTinxpvTqJaKXbnA.jpg" width="300"/>
+     <h3 class="text-xl font-bold mb-2">
+      Elegant Template
+     </h3>
+     <p class="text-gray-700 mb-4">
+      A simple and elegant resume template.
+     </p>
+     <a class="text-blue-600 hover:underline" href="{{ url_for('view_template', template_name='elegant') }}">
+      View Template
+     </a>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+     <img alt="Template 4: A professional resume template with a classic design" class="w-full h-48 object-cover rounded-t-lg mb-4" height="200" src="https://storage.googleapis.com/a1aa/image/ex3BoAfeufYGVRdtpNUC1cDzhn330e6ateXxVDde3g4cly12JA.jpg" width="300"/>
+     <h3 class="text-xl font-bold mb-2">
+      Classic Template
+     </h3>
+     <p class="text-gray-700 mb-4">
+      A professional resume template with a classic design.
+     </p>
+     <a class="text-blue-600 hover:underline" href="{{ url_for('view_template', template_name='classic') }}">
+      View Template
+     </a>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+     <img alt="Template 5: A modern resume template with a sleek design" class="w-full h-48 object-cover rounded-t-lg mb-4" height="200" src="https://storage.googleapis.com/a1aa/image/gcTHInqW7XYwHBIqIcPgwzBxzSLLqfTYPIbkstJoomCjy12JA.jpg" width="300"/>
+     <h3 class="text-xl font-bold mb-2">
+      Sleek Template
+     </h3>
+     <p class="text-gray-700 mb-4">
+      A modern resume template with a sleek design.
+     </p>
+     <a class="text-blue-600 hover:underline" href="{{ url_for('view_template', template_name='sleek') }}">
+      View Template
+     </a>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+     <img alt="Template 6: A minimalist resume template with a clean layout" class="w-full h-48 object-cover rounded-t-lg mb-4" height="200" src="https://storage.googleapis.com/a1aa/image/Fr7QcbHzu1LaCVS3SB8GPvJGljHoiOQDcdsme40eY64JlrtTA.jpg" width="300"/>
+     <h3 class="text-xl font-bold mb-2">
+      Minimalist Template
+     </h3>
+     <p class="text-gray-700 mb-4">
+      A minimalist resume template with a clean layout.
+     </p>
+     <a class="text-blue-600 hover:underline" href="{{ url_for('view_template', template_name='mini') }}">
+      View Template
+     </a>
+    </div>
+   </section>
+  </main>
+  <footer class="bg-gray-800 text-white py-6">
+   <div class="container mx-auto text-center">
+    <p>
+     © 2023 Resume Builder. All rights reserved.
+    </p>
+   </div>
+  </footer>
+ 
+ </body>
+</html>

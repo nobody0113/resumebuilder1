@@ -1,0 +1,86 @@
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Libre Baskerville', serif;
+        }
+    </style>
+</head>
+<div class="resume">
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-2xl w-full">
+        <div class="border-2 border-gray-300 p-6">
+            <div class="flex justify-between items-center mb-4">
+                <div>
+                    <h1 class="text-4xl font-bold">{{resume[2]}}</h1>
+                </div>
+                <div class="bg-gray-300 text-gray-700 px-4 py-2 rounded-full text-sm">COPYWRITER</div>
+            </div>
+            <div class="flex justify-between items-center text-gray-600 mb-6">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>{{resume[4]}}</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-envelope"></i>
+                    <span>{{resume[3]}}</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>{{resume[5]}}</span>
+                </div>
+            </div>
+            <hr class="border-gray-300 mb-6">
+            <div class="mb-6">
+                <h2 class="text-lg font-bold mb-2">PROFESIONAL PROFILE</h2>
+                <p class="text-gray-700">Skilled copywriter with 5 years of experience creating high-quality content for various platforms and mediums. Proficient in conducting research, crafting engaging copy, and developing creative concepts that bring brand messaging to life. Strong understanding of branding and marketing principles resulting in effective campaigns and increased conversions.</p>
+            </div>
+            <hr class="border-gray-300 mb-6">
+            <div class="mb-6">
+                <h2 class="text-lg font-bold mb-2">WORK EXPERIENCE</h2>
+                <div class="mb-4">
+                    <h3 class="font-bold">{{resume[7]}}</h3>
+                    <ul class="list-disc list-inside text-gray-700">
+                        <li>Develop creative concepts and write compelling copy for various advertising campaigns including print, digital, TV, and radio ads</li>
+                        <li>Collaborate with art directors and account executives to ensure consistency in messaging and brand identity</li>
+                        <li>Conduct market research and analyze target audience behavior to inform messaging and creative direction</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold">FREELANCE COPYWRITER </h3>
+                    <ul class="list-disc list-inside text-gray-700">
+                        <li>Worked with various clients to create copy for websites, product descriptions, email campaigns, and social media posts</li>
+                        <li>Conducted interviews and research to ensure the accuracy and relevance of content</li>
+                        <li>Provided regular updates to clients and incorporated feedback into revisions</li>
+                        <li>Demonstrated flexibility in adapting to different brand voices and styles</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-gray-300 mb-6">
+            <div class="mb-6">
+                <h2 class="text-lg font-bold mb-2">EDUCATION</h2>
+                <div class="flex justify-between text-gray-700">
+                    <span>{{resume[6]}}</span>
+                
+                </div>
+                
+            </div>
+            <hr class="border-gray-300 mb-6">
+            <div>
+                <h2 class="text-lg font-bold mb-2">SKILLS</h2>
+                <div class="flex flex-wrap gap-2">
+                    <div class="border border-gray-300 px-4 py-2 rounded-full text-gray-700">WRITING</div>
+                    <div class="border border-gray-300 px-4 py-2 rounded-full text-gray-700">RESEARCH</div>
+                    <div class="border border-gray-300 px-4 py-2 rounded-full text-gray-700">SEO SKILLS</div>
+                    <div class="border border-gray-300 px-4 py-2 rounded-full text-gray-700">STORYTELLING</div>
+                    <div class="border border-gray-300 px-4 py-2 rounded-full text-gray-700">MARKETING</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
